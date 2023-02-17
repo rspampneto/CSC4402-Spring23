@@ -12,7 +12,7 @@ concentrations and which are unique to a concentration.
 
 **Roles (Team Lead, Frontend, Backend):**  
 
-Otis Jackson - Team Lead  
+Otis Jackson IV - Team Lead & Frontend
 
 Robert Spampneto - Frontend & Backend  
 
