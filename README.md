@@ -16,3 +16,4 @@ Otis Jackson IV - Team Lead & Frontend
 
 Robert Spampneto - Frontend & Backend  
 
+Taylor Scott - Backend
