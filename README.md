@@ -19,3 +19,5 @@ Robert Spampneto - Frontend & Backend
 Taylor Scott - Backend
 
 Ravi Stimphil - Backend
+
+Aaron Warren - Frontend & Backend
