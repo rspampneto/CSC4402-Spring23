@@ -12,12 +12,18 @@ concentrations and which are unique to a concentration.
 
 **Roles (Team Lead, Frontend, Backend):**  
 
-Otis Jackson IV - Team Lead & Frontend
+Otis Jackson IV - Frontend
 
-Robert Spampneto - Frontend & Backend  
+Robert Spampneto - Team Lead  
 
 Taylor Scott - Backend
 
 Ravi Stimphil - Backend
 
-Aaron Warren - Frontend & Backend
+Aaron Warren - Frontend & Backend  
+
+Harrison Bourg - Backend  
+
+Nicholas Tanet - Frontend
+
+Marseyas Fernandez - Backend
