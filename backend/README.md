@@ -28,3 +28,10 @@ schema.prisma file in your local db.
 ```npm install```
 
 ```npm run start:dev```
+
+## NestJS Commands
+Generate a module
+``` nest g module {module name} ```
+
+Generate a service
+``` nest g service {service name} ```
