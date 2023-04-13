@@ -9,10 +9,10 @@ import * as dotenv from 'dotenv';
 
 async function bootstrap() {
   // loads environment variables from a .env file into process.env
-  dotenv.config(); 
+  dotenv.config();
   const app = await NestFactory.create(AppModule);
   app.setGlobalPrefix('api');
-  app.enableCors({origin: '*'});
+  app.enableCors({ origin: '*' });
   await app.listen(4000);
 }
 bootstrap();
