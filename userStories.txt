@@ -1,0 +1,4 @@
+As a upcoming CSC student, I want to see what classes I’ll need, so that I have a basic idea what classes to enroll. 
+As a cyber security student, I want to know what classes I need for my concentration, so that I can finish the requirements for my concentration. 
+As a software engineer student, I want to see good CSC electives for me, so that I can complete my electives for CSC. *
+As a visual learner, I want to see all the courses I need for my program, so that I see the courses needed better.
