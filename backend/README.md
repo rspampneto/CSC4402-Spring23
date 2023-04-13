@@ -18,7 +18,6 @@ The .env file should consist of the following fields:
 DB_HOST = ""
 DB_USER = ""
 DB_PW = ""
-DB_NAME = ""
 ```
 use information from your mysql workbench
 
@@ -26,7 +25,6 @@ example:
 DB_HOST = "localhost"
 DB_USER = "root"
 DB_PW = "123"
-DB_NAME = "csc4402db"
 
 ## Running the backend with NestJS
 ```npm install```

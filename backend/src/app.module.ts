@@ -16,7 +16,7 @@ import { DatabaseService } from './database/database.service';
 export class AppModule implements OnModuleInit{
   constructor(private db: DatabaseService){}
   // establish DB connection after core app module initialization
-  onModuleInit() {
-    this.db.init_db();
+  async onModuleInit() {
+    await this.db.init_db();
   }
 }
