@@ -10,19 +10,23 @@ create and name a new schema, and then click apply -> apply -> finish.
 
 ## Env file setup
 To run this project, you will need a .env file located in the root directory.
-The .env file connects the Prisma ORM tool to your local db.
-The .env file consists of the following fields:
+The .env file will contain constants that will be loaded into process.env 
+to connect the backend to your local mySQL DB.
+The .env file should consist of the following fields:
 
 ```
-DATABASE_URL: mysql://USER:PASSWORD@HOST:PORT/DATABASE
+DB_HOST = ""
+DB_USER = ""
+DB_PW = ""
+DB_NAME = ""
 ```
 use information from your mysql workbench
-example: mysql://root:123@localhost:3306/csc4402db
 
-## Using Prisma to Modify mySql DB Schema
-Define the schema in the schema.prisma file in the prisma folder.
-Run ``` npx prisma migrate dev ``` to create the tables defined in the 
-schema.prisma file in your local db.
+example:
+DB_HOST = "localhost"
+DB_USER = "root"
+DB_PW = "123"
+DB_NAME = "csc4402db"
 
 ## Running the backend with NestJS
 ```npm install```
