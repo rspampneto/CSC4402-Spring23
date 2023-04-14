@@ -2,7 +2,7 @@ import React, { ReactElement, ReactNode } from "react";
 import "../App.css";
 import { environment } from "../environment/environment.js";
 import axios from 'axios';
-import { Course } from "./course";
+import { Course } from "../interfaces/course";
 
 function Example() {
   const [courses, setCourseList] = React.useState<Course[]>([]);
