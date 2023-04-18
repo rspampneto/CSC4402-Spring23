@@ -1,3 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Attributes */
+:root {
+  --primary-colorA: #120208;
+  --primary-colorB: #595959;
+  --secondary-colorA: #808f85;
+  --secondary-colorB: #f2e9dc;
+  --tertiary-color: #91c499;
+}
+
+/* Classes */
 .App {
   text-align: center;
+  background: rgb(40, 40, 40);
+  width: 100%;
+  height: 100vh;
+
+  overflow: hidden;
 }
+
+/* ID's */
