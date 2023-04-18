@@ -1,0 +1,32 @@
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Attributes */
+:root {
+  --primary-colorA: #120208;
+  --primary-colorB: #595959;
+  --secondary-colorA: #808f85;
+  --secondary-colorB: #f2e9dc;
+  --tertiary-color: #91c499;
+}
+
+/* Classes */
+.space {
+  left: 5%;
+}
+
+/* ID's */
+#app_bar {
+  height: 10vh;
+  background: var(--primary-colorA);
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--secondary-colorB);
+}
