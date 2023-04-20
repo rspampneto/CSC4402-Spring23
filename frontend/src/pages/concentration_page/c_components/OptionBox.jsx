@@ -5,7 +5,7 @@ import { Box, Text } from "@chakra-ui/react";
 import { Stack, HStack, VStack } from "@chakra-ui/react";
 
 import "../select.css";
-import "../../../App.css"; // Alignment Classes
+import "../../../App.css"; // Alignment Classes & Font Classes
 
 export const OptionBox = (props) => {
   return (
