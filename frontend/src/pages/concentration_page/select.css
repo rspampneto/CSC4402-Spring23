@@ -5,6 +5,7 @@
   box-sizing: border-box;
 
   font-family: "Josefin Sans", sans-serif;
+  text-decoration: none;
 }
 
 /* Attributes */
@@ -17,5 +18,68 @@
 }
 
 /* Classes */
+/* .bg_space {
+  left: 12%;
+}
+.vert_spaceA {
+  top: 40%;
+}
+.vert_spaceB {
+  top: 25%;
+}
+
+.font_large {
+  font-size: 15ch;
+}
+.font_medium {
+  font-size: 3ch;
+} */
+
+.option-layout {
+  top: 20ch;
+  border: 1px solid white;
+  width: 75%;
+  left: 12.5%;
+}
 
 /* ID's */
+#select {
+}
+#select_bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #91c49957;
+
+  object-fit: cover;
+  overflow: hidden;
+}
+#select-content {
+  width: 75%;
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 6, 6, 0.393),
+    var(--tertiary-color)
+  );
+  height: 100vh;
+  border-left: 5px solid var(--secondary-colorB);
+  border-right: 5px solid var(--secondary-colorB);
+  color: var(--secondary-colorB);
+}
+#select-title {
+  top: 20%;
+  font-size: 7ch;
+}
+
+/* Component Classes */
+.option-box {
+  width: 100%;
+  height: 150px;
+  background-color: var(--secondary-colorA);
+}
+.option-box-innerText {
+  width: 75%;
+  height: 150px;
+  color: var(--secondary-colorB);
+  background-color: var(--primary-colorA);
+}

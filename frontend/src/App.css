@@ -26,4 +26,22 @@
   overflow: hidden;
 }
 
+/* Alignment Classes (Global) */
+.bg_space {
+  left: 12%;
+}
+.vert_spaceA {
+  top: 40%;
+}
+.vert_spaceB {
+  top: 25%;
+}
+
+.font_large {
+  font-size: 15ch;
+}
+.font_medium {
+  font-size: 3ch;
+}
+
 /* ID's */
