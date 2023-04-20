@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+
+  font-family: "Josefin Sans", sans-serif;
+  /* color: var(--secondary-colorB); */
+}
+
+/* Attributes */
+:root {
+  --primary-colorA: #120208;
+  --primary-colorB: #595959;
+  --secondary-colorA: #808f85;
+  --secondary-colorB: #f2e9dc;
+  --tertiary-color: #91c499;
+}
+
+/* Alignment Classes (Global) */
+.bg_space {
+  left: 12%;
+}
+.vert_spaceA {
+  top: 40%;
+}
+.vert_spaceB {
+  top: 25%;
+}
+
+.font_large {
+  font-size: 15ch;
+}
+.font_medium {
+  font-size: 3ch;
+}
+
+.timeline_title_box {
+  top: 5%;
+  left: 5%;
+  height: 10ch;
+  width: 60%;
+
+  background-color: #393939;
+  border: 1px solid black;
+}
+.timeline_title {
+  top: 10%;
+  left: 5%;
+  font-size: 5ch;
+}
+
+.timeline_page {
+  text-align: left;
+  width: 100%;
+  height: 100%;
+}
+
+/* =========================================================== */
+/* Timeline Pages */
+/* =========================================================== */
+
+/* Classes */
+.content {
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(6, 6, 6, 0.393),
+    var(--primary-colorA)
+  );
+  height: 100vh;
+  border-left: 5px solid var(--secondary-colorB);
+  border-right: 5px solid var(--secondary-colorB);
+  color: var(--secondary-colorB);
+}
+.page_bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.core-display {
+  top: 15%;
+  /* overflow-x: scroll; */
+  width: 60%;
+  height: 460px;
+  background-color: #393939;
+  left: 5%;
+
+  border: 1px solid black;
+}
+.elective-display {
+  /* overflow-y: scroll; */
+  width: 31%;
+  height: 460px;
+  background-color: #393939;
+  left: 6%;
+
+  border: 1px solid black;
+}
+.main-display {
+  top: 15%;
+}
+
+.core-description {
+  width: 20%;
+  height: 100%;
+  background-color: var(--secondary-colorA);
+}
+
+/* ID's */
+#timeline_decorationA {
+  background-color: var(--secondary-colorA);
+  left: 22.1%;
+  width: 10%;
+  height: 100%;
+}
+#timeline_decorationB {
+  background-color: var(--secondary-colorA);
+  left: 50%;
+  width: 10%;
+  height: 100%;
+}
+#timeline_decorationC {
+  background-color: var(--secondary-colorA);
+  left: 45.7%;
+  width: 10%;
+  height: 100%;
+}
+#timeline_decorationD {
+  background-color: var(--secondary-colorA);
+  left: 37%;
+  width: 10%;
+  height: 100%;
+}
