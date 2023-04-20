@@ -34,7 +34,11 @@ export class DatabaseService {
     }
 
     try{
-      sql = 'CREATE TABLE course (id CHAR(4), title VARCHAR(20), credits CHAR(1), primary key (id))';
+      sql = 'CREATE TABLE course (id varchar(10), concentration varchar(20), title varchar(20), primary key (id, concentration));';
+      await this.connection.query(sql);
+      sql = 'CREATE TABLE course (id varchar(10), course_id varchar(10), semester varchar(10), start varchar(10), end varchar(10), days varchar(20), room varchar(20), prof varchar(30), primary key(id, course_id, semester), foreign key(course_id) references course);';
+      await this.connection.query(sql);
+      sql = 'CREATE TABLE course (id varchar(10), title varchar(20), primary key(id));';
       await this.connection.query(sql);
       sql = "insert into course values ('1350','Intro. to CompSci','4');";
       await this.connection.query(sql);
