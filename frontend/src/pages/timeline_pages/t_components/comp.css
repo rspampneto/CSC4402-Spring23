@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+
+  font-family: "Josefin Sans", sans-serif;
+  text-decoration: none;
+}
+
+/* Attributes */
+:root {
+  --primary-colorA: #120208;
+  --primary-colorB: #595959;
+  --secondary-colorA: #808f85;
+  --secondary-colorB: #f2e9dc;
+  --tertiary-color: #91c499;
+}
+
+/* Classes */
+
+/* ID's */
+#core-container {
+  position: absolute;
+  height: 100%;
+  width: 80%;
+  left: 19%;
+  /* border: 1px solid red; */
+}
+#scroll-container {
+  /* border: 1px solid green; */
+  width: 100%;
+  height: 100%;
+  overflow-x: scroll;
+
+  background-color: #2a2a2a;
+}
+#semester-list {
+  position: absolute;
+  background-color: #120208;
+  /* border: 1px solid var(--primary-colorB); */
+  width: 2000px;
+  height: 80%;
+  top: 15%;
+  left: 10%;
+  border: 1px solid var(--primary-colorB);
+
+  /* box-shadow: 0px 6px 10px 5px black; */
+}
+#core-title {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  border: 1px solid var(--primary-colorB);
+  border-left: none;
+  box-shadow: 10px 0px 10px 5px black;
+
+  background-color: #393939;
+
+  display: flex;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+#elective-container {
+  /* border: 1px solid red; */
+  top: 9%;
+  height: 90%;
+  background-color: #2a2a2a;
+
+  overflow-y: scroll;
+}
+#elective-list {
+  position: absolute;
+  height: 1200px;
+  top: 6%;
+  left: 10%;
+  width: 80%;
+  border: 1px solid var(--primary-colorB);
+  border-bottom: none;
+  background-color: var(--primary-colorA);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  /* background-color: var(--primary-colorB); */
+  background-color: #272727;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-colorA);
+  border: 1px solid #434343;
+}
