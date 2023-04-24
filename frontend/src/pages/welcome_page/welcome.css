@@ -51,7 +51,7 @@
   background: linear-gradient(
     to bottom,
     rgba(6, 6, 6, 0.393),
-    var(--tertiary-color)
+    var(--primary-colorA)
   );
   height: 100vh;
   border-left: 5px solid var(--secondary-colorB);
@@ -62,4 +62,7 @@
   width: 30%;
   height: 80px;
   border-radius: 15vh;
+  border: 3px solid var(--secondary-colorB);
+  background-color: #f2e9dc47;
+  color: var(--secondary-colorB);
 }
