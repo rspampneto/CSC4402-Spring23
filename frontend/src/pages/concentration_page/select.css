@@ -60,7 +60,7 @@
   border: 3px solid var(--secondary-colorB);
   width: 100%;
   height: 130px;
-  /* background-color: #f2e9dc; */
+  background-color: #f2e9dc59;
   /* background-color: var(--primary-colorB); */
 
   border-radius: 10vh;
@@ -74,6 +74,5 @@
   height: 150px;
   color: var(--secondary-colorB);
   /* background-color: rgba(0, 255, 255, 0.363); */
-  background-color: #f2e9dc47;
+  background-color: #12020874;
 }
-
