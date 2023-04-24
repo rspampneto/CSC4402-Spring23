@@ -41,8 +41,8 @@
   height: 10ch;
   width: 60%;
 
-  background-color: #393939;
-  border: 1px solid black;
+  background-color: var(--primary-colorA);
+  border: 1px solid rgb(252, 250, 250);
 }
 .timeline_title {
   top: 10%;
@@ -110,31 +110,61 @@
 .core-description {
   width: 20%;
   height: 100%;
-  background-color: var(--secondary-colorA);
+  background-color: #393939;
+  border: 1px solid var(--primary-colorB);
+  /* border: 1px solid var(--primary-colorB); */
+  box-shadow: 1px 0px 10px 3px black;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+
+  gap: 40px;
+  color: var(--secondary-colorB);
 }
 
 /* ID's */
 #timeline_decorationA {
-  background-color: var(--secondary-colorA);
-  left: 22.1%;
+  background: linear-gradient(to top, blue, rgb(73, 161, 244));
+  left: 21.7%;
   width: 10%;
   height: 100%;
+  border: 4px solid rgb(0, 49, 114);
 }
 #timeline_decorationB {
-  background-color: var(--secondary-colorA);
+  background: linear-gradient(to top, red, rgb(244, 90, 73));
   left: 50%;
   width: 10%;
   height: 100%;
+  border: 4px solid rgb(114, 0, 0);
+  /*data science  */
 }
 #timeline_decorationC {
-  background-color: var(--secondary-colorA);
+  background: linear-gradient(to top, green, rgb(73, 244, 93));
   left: 45.7%;
   width: 10%;
   height: 100%;
+  border: 4px solid rgb(0, 114, 8);
+  /* cyber */
 }
 #timeline_decorationD {
-  background-color: var(--secondary-colorA);
+  background: linear-gradient(to top, orange, rgb(244, 90, 73));
   left: 37%;
   width: 10%;
   height: 100%;
+  border: 4px solid rgb(114, 53, 0);
+}
+#elective-title {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: #393939;
+  border: 1px solid var(--primary-colorB);
+  box-shadow: 1px 0px 10px 5px black;
+
+  display: flex;
+
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
