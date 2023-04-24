@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Text, SimpleGrid, Heading } from "@chakra-ui/react";
-import landing_img from "../../assets/photos/a-book-978888_1920.jpg";
+import landing_img from "../../assets/photos/books-1204029_1920.jpg";
 import { easeIn, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -26,11 +26,7 @@ export const Select = () => {
         <motion.h1 id="select-title">Select A Concentration</motion.h1>
 
         {/* Option Display */}
-        <SimpleGrid
-          columns={2}
-          spacing={5}
-          className="option-layout vert_spaceA"
-        >
+        <SimpleGrid columns={2} spacing={25} className="option-layout">
           <Link to="/cloud-computing">
             <OptionBox title="Cloud Computing" />
           </Link>
