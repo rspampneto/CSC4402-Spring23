@@ -6,16 +6,16 @@ import { CourseService } from './course.service';
 export class CourseController {
 
     constructor(
-        private exampleService: CourseService
+        private courseService: CourseService
     ){}
 
     @Get('')
     getTest(){
-        return  this.exampleService.getAllCourses();
+        return  this.courseService.getAllCourses();
     }
 
     @Get(':id')
     getConcentrationCourses(@Param() {id: concID}){
-        return this.exampleService.getConcentrationCourses(concID);
+        return this.courseService.getConcentrationCourses(concID);
     }
 }
