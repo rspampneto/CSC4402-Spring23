@@ -2,7 +2,7 @@ import { Injectable } from '@nestjs/common';
 import { DatabaseService } from 'src/database/database.service';
 
 @Injectable()
-export class ExampleService {
+export class CourseService {
 
     constructor(
         private db: DatabaseService
@@ -10,5 +10,9 @@ export class ExampleService {
 
     async getAllCourses(){
         return await this.db.query_DB("select * from course;");
+    }
+
+    async getConcentrationCourses(concentration_id: number){
+        return await this.db.query_DB(`select * from course where con_id = 0 or con_id = ${concentration_id}`);
     }
 }
