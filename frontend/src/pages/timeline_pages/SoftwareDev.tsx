@@ -16,7 +16,7 @@ const SoftwareDev = () => {
   const [courses, setCourseList] = React.useState<Course[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
-  const baseUrl = environment.baseApiUrl + "/example/1"
+  const baseUrl = environment.baseApiUrl + "/course/1"
 
   React.useEffect(() => {
     const getData = async () => {
