@@ -8,7 +8,7 @@ import { AppBar } from "./components/application_bar/AppBar";
 import CloudComputing from "../src/pages/timeline_pages/CloudComputing.js";
 import CyberSecurity from "../src/pages/timeline_pages/CyberSecurity";
 import DataScience from "../src/pages/timeline_pages/DataScience";
-import SoftwareDev from "../src/pages/timeline_pages/SoftwareDev";
+import SoftwareDev from "../src/pages/timeline_pages/SoftwareDev.tsx";
 
 function App() {
   return (

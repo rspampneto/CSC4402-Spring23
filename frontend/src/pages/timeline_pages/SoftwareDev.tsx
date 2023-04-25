@@ -5,10 +5,35 @@ import CoreContainer from "./t_components/CoreContainer";
 
 import "./timeline.css";
 import "../../App.css"; // Alignment & Font Classes
+import { Course } from "../../interfaces/course";
+import React from "react";
+import { environment } from "../../environment/environment";
+import axios from "axios";
 
 const SoftwareDev = () => {
-  // Attributes
+  // Attributes 
   // Functions
+  const [courses, setCourseList] = React.useState<Course[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+  const baseUrl = environment.baseApiUrl + "/example/1"
+
+  React.useEffect(() => {
+    const getData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get<Course[]>(baseUrl);
+        console.log(response);
+        setCourseList(response.data)
+      } catch (error) {
+        console.error(error);
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getData();
+  }, []);
   // JSX
   return (
     <Box id="software">
@@ -39,7 +64,7 @@ const SoftwareDev = () => {
             </Stack>
 
             {/* Component */}
-            <CoreContainer />
+            <CoreContainer/>
           </HStack>
 
           {/* Elective Classes Display Section */}
