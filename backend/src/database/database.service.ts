@@ -80,7 +80,7 @@ export class DatabaseService {
       sql =
         "insert into course values ('3102','Advanced Data Structures', '0', '3');";
       await this.connection.query(sql);
-      sql = "insert into course values ('4103','Operating Systems', '2', '3');";
+      sql = "insert into course values ('4103','Operating Systems', '0', '3');";
       await this.connection.query(sql);
       sql =
         "insert into course values ('2259','Discrete Structures', '0', '3');";
@@ -102,6 +102,53 @@ export class DatabaseService {
       await this.connection.query(sql);
       sql =
         "insert into course values ('3200','Ethics in Computing', '0', '1');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('3304','Systems Programming', '1', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('4351','Compiler Construction', '1', '3');";
+      await this.connection.query(sql);
+      sql = "insert into course values ('4332','Software Testing', '1', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('3304','Intro. Systems Programming', '2', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('2362','Intro. to CyberSec', '2', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('4360','Malware Anal. & Rev. Eng.', '2', '3');";
+      await this.connection.query(sql);
+      sql = "insert into course values ('4501','Computer Networks', '2', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('4362','Software Vulnerability', '2', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('4562','Mobile Sec & Crypto', '2', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('2610','Cloud Fund. & Web Prog.', '3', '3');";
+      await this.connection.query(sql);
+      sql = "insert into course values ('4510','Computer Networks', '3', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('4610','Cloud Sys. & Virtual', '3', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('4562','Mobile Sec & Crypto', '3', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('2730','Data Sci & Analytics', '4', '3');";
+      await this.connection.query(sql);
+      sql = "insert into course values ('4740','Big Data Tech', '4', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('3730','Machine Learning & Data Anal.', '4', '3');";
+      await this.connection.query(sql);
+      sql =
+        "insert into course values ('4343','Applied Deep Learning', '4', '3');";
       await this.connection.query(sql);
 
       // section
