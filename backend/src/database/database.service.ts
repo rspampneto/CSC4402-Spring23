@@ -42,7 +42,7 @@ export class DatabaseService {
       sql =
         'CREATE TABLE course (' +
         'id char(4), title varchar(50), con_id char(1), credit char(1),' +
-        'primary key (id),' +
+        'primary key (id, con_id),' +
         'foreign key (con_id) references concentration(id));';
       await this.connection.query(sql);
       sql =
