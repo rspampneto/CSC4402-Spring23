@@ -44,7 +44,7 @@ export class DatabaseService {
             + 'foreign key (con_id) references concentration(id));';
       await this.connection.query(sql);
       sql = 'CREATE TABLE section ('
-      + 'course_id char(4), sec_id char(1), semester varchar(10), time varchar(15),'
+      + 'course_id char(4), sec_id char(1), semester varchar(10), days varchar(10), start_time varchar(6), end_time varchar(6),'
       + 'primary key (course_id, sec_id, semester),' 
       + 'foreign key (course_id) references course(id));';
       await this.connection.query(sql);
@@ -54,6 +54,7 @@ export class DatabaseService {
     }
 
     try{
+      // concentrations
       sql = "insert into concentration values ('0','Base Department Course');";
       await this.connection.query(sql);
       sql = "insert into concentration values ('1','Software Development');";
@@ -62,6 +63,7 @@ export class DatabaseService {
       await this.connection.query(sql);
       sql = "insert into concentration values ('3','Cloud Computing & Networking');";
       await this.connection.query(sql);
+      // courses
       sql = "insert into concentration values ('4','Data Science & Analytics');";
       await this.connection.query(sql);
       sql = "insert into course values ('1350','Intro. to Comp. Sci.', '0', '4');";
@@ -71,6 +73,10 @@ export class DatabaseService {
       sql = "insert into course values ('3102','Advanced Data Structures', '0', '3');";
       await this.connection.query(sql);
       sql = "insert into course values ('4103','Operating Systems', '2', '3');";
+      await this.connection.query(sql);
+
+      // section
+      sql = "insert into section values ('1350','1', 'Fall', 'T|TH', '1:30', '3:30');";
       await this.connection.query(sql);
     } catch(e){
       console.log("Error inserting values. " + e)
