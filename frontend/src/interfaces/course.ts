@@ -1,6 +1,8 @@
+import { Section } from "./section";
 export interface Course {
     id: number;
-    concentration: number;
+    con_id: number;
     title: string;
-    credits: number;
+    credit: number;
+    sections: Array<Section>;
 }
