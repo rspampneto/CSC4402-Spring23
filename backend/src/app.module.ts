@@ -1,11 +1,11 @@
 import { Module, OnModuleInit } from '@nestjs/common';
 import { DatabaseModule } from './database/database.module';
 import { ConfigModule } from '@nestjs/config';
-import { ExampleModule } from './example/example.module';
+import { CourseModule } from './course/course.module';
 import { DatabaseService } from './database/database.service';
 
 @Module({
-  imports: [DatabaseModule, ExampleModule, ConfigModule.forRoot()],
+  imports: [DatabaseModule, CourseModule, ConfigModule.forRoot()],
   controllers: [],
   providers: [],
 })
