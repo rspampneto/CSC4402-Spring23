@@ -9,6 +9,9 @@ export class SectionService {
     ){}
 
     async getSectionForCourse(courseID: number){
-        return await this.db.query_DB(`select * from section where course_id = ${courseID}`);
+        console.log("num" + courseID);
+        return await this.db.query_DB(
+            `select * from section where course_id = ${courseID}`,
+        );
     }
 }

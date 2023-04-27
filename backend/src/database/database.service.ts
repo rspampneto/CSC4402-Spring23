@@ -67,10 +67,10 @@ export class DatabaseService {
       sql =
         "insert into concentration values ('3','Cloud Computing & Networking');";
       await this.connection.query(sql);
-      // courses
       sql =
         "insert into concentration values ('4','Data Science & Analytics');";
       await this.connection.query(sql);
+      // courses
       sql =
         "insert into course values ('1350','Intro. to Comp. Sci.', '0', '4');";
       await this.connection.query(sql);
