@@ -1,18 +1,43 @@
 import react from "react";
 import { Box, HStack, Heading, Text, Stack } from "@chakra-ui/react";
-import bg_img from "../../assets/photos/redblack.jpg";
+import bg_img from "../../assets/photos/greenblack.jpg";
 import ElectiveContainer from "./t_components/ElectiveContainer";
 import CoreContainer from "./t_components/CoreContainer";
 
 import "./timeline.css";
 import "../../App.css"; // Alignment & Font Classes
+import { Course } from "../../interfaces/course";
+import React from "react";
+import { environment } from "../../environment/environment";
+import axios from "axios";
 
-const DataScience = () => {
+const CyberSecurity = () => {
   // Attributes
   // Functions
+  const [courses, setCourseList] = React.useState<Course[]>([]);
+  const [loading, setLoading] = React.useState(true);
+  const [error, setError] = React.useState(null);
+  const baseUrl = environment.baseApiUrl + "/course/2"
+
+  React.useEffect(() => {
+    const getData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get<Course[]>(baseUrl);
+        console.log(response);
+        setCourseList(response.data)
+      } catch (error) {
+        console.error(error);
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    }
+    getData();
+  }, []);
   // JSX
   return (
-    <Box id="data">
+    <Box id="cyber">
       {/* Landing Background */}
       <Box className="page_bg">
         <img src={bg_img}></img>
@@ -23,9 +48,9 @@ const DataScience = () => {
         {/* Software Title */}
         <HStack className="timeline_title_box">
           <Text as="h1" className="timeline_title">
-            Data Science
+            Cyber Security
           </Text>
-          <Box id="timeline_decorationB"></Box>
+          <Box id="timeline_decorationC"></Box>
         </HStack>
 
         {/* Main Display Section */}
@@ -48,7 +73,6 @@ const DataScience = () => {
             <Box id="elective-title">
               <Text>Electives & General Education</Text>
             </Box>
-
             {/* Component */}
             <ElectiveContainer />
           </Box>
@@ -58,4 +82,4 @@ const DataScience = () => {
   );
 };
 
-export default DataScience;
+export default CyberSecurity;
