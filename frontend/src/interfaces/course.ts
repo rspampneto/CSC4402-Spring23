@@ -1,8 +1,15 @@
 import { Section } from "./section";
-export interface Course {
+export interface CourseDB {
     id: number;
     con_id: number;
     title: string;
     credit: number;
-    sections: Array<Section>;
+}
+
+export type Course = {
+    id: number;
+    con_id: number;
+    title: string;
+    credit: number;
+    sections: Section[]
 }
