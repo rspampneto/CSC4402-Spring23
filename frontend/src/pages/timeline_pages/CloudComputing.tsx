@@ -6,10 +6,11 @@ import CoreContainer from "./t_components/CoreContainer";
 
 import "./timeline.css";
 import "../../App.css"; // Alignment & Font Classes
-import { Course } from "../../interfaces/course";
+import { Course, CourseDB } from "../../interfaces/course";
 import React from "react";
 import { environment } from "../../environment/environment";
 import axios from "axios";
+import { Section } from "../../interfaces/section";
 
 const CloudComputing = () => {
   // Attributes
@@ -23,9 +24,30 @@ const CloudComputing = () => {
     const getData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get<Course[]>(baseUrl);
-        console.log(response);
-        setCourseList(response.data)
+        // grab the base CS courses and concentration-specific courses
+        const response = await axios.get<CourseDB[]>(baseUrl);
+        console.log(response.data);
+        // new var to store courses and their respective sections
+        let coursesWSec: Course[] = [];
+        
+         // for each course retrieved from API
+         for(const element of response.data){
+          // grab their respective sections
+          await axios.get<Section[]>(environment.baseApiUrl + `/section/${element.id}`).then(
+            (response) => {
+              // create a Course type object with those sections
+              let newCourse: Course = {
+                ... element,
+                sections: response.data
+              };
+              // push to Course array
+              coursesWSec.push(newCourse);
+            });
+        };
+        console.log(coursesWSec);
+        // set course state
+        setCourseList(coursesWSec);
+
       } catch (error) {
         console.error(error);
         setError(error);
