@@ -5,9 +5,9 @@ import { Welcome } from "./pages/welcome_page/Welcome";
 import { Select } from "./pages/concentration_page/Select";
 import { AppBar } from "./components/application_bar/AppBar";
 
-import CloudComputing from "../src/pages/timeline_pages/CloudComputing.js";
-import CyberSecurity from "../src/pages/timeline_pages/CyberSecurity";
-import DataScience from "../src/pages/timeline_pages/DataScience";
+import CloudComputing from "../src/pages/timeline_pages/CloudComputing.tsx";
+import CyberSecurity from "../src/pages/timeline_pages/CyberSecurity.tsx";
+import DataScience from "../src/pages/timeline_pages/DataScience.tsx";
 import SoftwareDev from "../src/pages/timeline_pages/SoftwareDev.tsx";
 
 function App() {
