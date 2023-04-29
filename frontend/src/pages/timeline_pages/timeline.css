@@ -42,7 +42,8 @@
   width: 60%;
 
   background-color: var(--primary-colorA);
-  border: 1px solid rgb(252, 250, 250);
+  border: 3px solid rgb(252, 250, 250);
+  border-radius: 2vh;
 }
 .timeline_title {
   top: 10%;
@@ -61,6 +62,21 @@
 /* =========================================================== */
 
 /* Classes */
+.back {
+  top: 10%;
+  left: 5%;
+  border: 3px solid var(--primary-colorB);
+  border-radius: 2vh;
+  background-color: #373636;
+  width: 15%;
+  height: 50px;
+  color: whitesmoke;
+  overflow: hidden;
+}
+.back-icon {
+  transform: scale(1.32);
+  font-weight: bolder;
+}
 .content {
   left: 5%;
   width: 90%;
@@ -96,12 +112,14 @@
 }
 .elective-display {
   /* overflow-y: scroll; */
+  /* border: 6px solid palevioletred; */
   width: 31%;
   height: 460px;
   background-color: #393939;
   left: 6%;
+  /* margin-bottom: 200px; */
 
-  border: 1px solid black;
+  /* border: 1px solid black; */
 }
 .main-display {
   top: 15%;
@@ -117,6 +135,7 @@
   display: flex;
   text-align: center;
   justify-content: center;
+  border-top-left-radius: 2vh;
 
   gap: 40px;
   color: var(--secondary-colorB);
@@ -129,6 +148,7 @@
   width: 10%;
   height: 100%;
   border: 4px solid rgb(0, 49, 114);
+  border-radius: 2vh;
 }
 #timeline_decorationB {
   background: linear-gradient(to top, red, rgb(244, 90, 73));
@@ -136,6 +156,7 @@
   width: 10%;
   height: 100%;
   border: 4px solid rgb(114, 0, 0);
+  border-radius: 2vh;
   /*data science  */
 }
 #timeline_decorationC {
@@ -144,6 +165,7 @@
   width: 10%;
   height: 100%;
   border: 4px solid rgb(0, 114, 8);
+  border-radius: 2vh;
   /* cyber */
 }
 #timeline_decorationD {
@@ -152,6 +174,7 @@
   width: 10%;
   height: 100%;
   border: 4px solid rgb(114, 53, 0);
+  border-radius: 2vh;
 }
 #elective-title {
   position: absolute;
@@ -159,6 +182,8 @@
   height: 50px;
   background-color: #393939;
   border: 1px solid var(--primary-colorB);
+  border-top-right-radius: 2vh;
+  border-top-left-radius: 2vh;
   box-shadow: 1px 0px 10px 5px black;
 
   display: flex;

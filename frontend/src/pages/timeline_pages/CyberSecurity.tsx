@@ -1,8 +1,9 @@
 import react from "react";
-import { Box, HStack, Heading, Text, Stack } from "@chakra-ui/react";
+import { Box, HStack, Heading, Text, Stack, Button } from "@chakra-ui/react";
 import bg_img from "../../assets/photos/greenblack.jpg";
 import ElectiveContainer from "./t_components/ElectiveContainer";
 import CoreContainer from "./t_components/CoreContainer";
+import { Link } from "react-router-dom";
 
 import "./timeline.css";
 import "../../App.css"; // Alignment & Font Classes
@@ -11,6 +12,17 @@ import React from "react";
 import { environment } from "../../environment/environment";
 import axios from "axios";
 import { Section } from "../../interfaces/section";
+import { BsChevronDoubleLeft } from "react-icons/bs";
+
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalFooter,
+  ModalBody,
+  ModalCloseButton,
+} from "@chakra-ui/react";
 
 const CyberSecurity = () => {
   // Attributes
@@ -18,7 +30,7 @@ const CyberSecurity = () => {
   const [courses, setCourseList] = React.useState<Course[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
-  const baseUrl = environment.baseApiUrl + "/course/2"
+  const baseUrl = environment.baseApiUrl + "/course/2";
 
   React.useEffect(() => {
     const getData = async () => {
@@ -29,32 +41,32 @@ const CyberSecurity = () => {
         console.log(response.data);
         // new var to store courses and their respective sections
         let coursesWSec: Course[] = [];
-        
-         // for each course retrieved from API
-         for(const element of response.data){
+
+        // for each course retrieved from API
+        for (const element of response.data) {
           // grab their respective sections
-          await axios.get<Section[]>(environment.baseApiUrl + `/section/${element.id}`).then(
-            (response) => {
+          await axios
+            .get<Section[]>(environment.baseApiUrl + `/section/${element.id}`)
+            .then((response) => {
               // create a Course type object with those sections
               let newCourse: Course = {
-                ... element,
-                sections: response.data
+                ...element,
+                sections: response.data,
               };
               // push to Course array
               coursesWSec.push(newCourse);
             });
-        };
+        }
         console.log(coursesWSec);
         // set course state
         setCourseList(coursesWSec);
-
       } catch (error) {
         console.error(error);
         setError(error);
       } finally {
         setLoading(false);
       }
-    }
+    };
     getData();
   }, []);
   // JSX
@@ -74,6 +86,16 @@ const CyberSecurity = () => {
           </Text>
           <Box id="timeline_decorationC"></Box>
         </HStack>
+
+        {/* Back Button */}
+        <Link to="/select">
+          <Button className="back">
+            <HStack>
+              <BsChevronDoubleLeft className="back-icon" />
+              <Text as="h1">Prev. Page</Text>
+            </HStack>
+          </Button>
+        </Link>
 
         {/* Main Display Section */}
         <HStack className="main-display">

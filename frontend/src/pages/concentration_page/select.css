@@ -63,7 +63,7 @@
   background-color: #f2e9dc59;
   /* background-color: var(--primary-colorB); */
 
-  border-radius: 10vh;
+  border-radius: 2vh;
 }
 .option-box:hover {
   transform: scale(1.1);
