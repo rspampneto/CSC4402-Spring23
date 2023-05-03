@@ -99,26 +99,26 @@ const SoftwareDev = () => {
 
         {/* Main Display Section */}
         <HStack className="main-display">
+          
           {/* Core Classes Display Section */}
           <HStack className="core-display">
-
             {/* Component */}
             <Stack id="core-container">
-      <Box id="core-title">
-        <Text>Core Concentrated Courses</Text>
-      </Box>
+              <Box id="core-title">
+                <Text>Core Concentrated Courses</Text>
+              </Box>
 
-      {/* Scroll Container */}
-      <HStack id="scroll-container">
-        {/* Semester List */}
-        <HStack id="semester-list">
-          <Stack wrap="wrap" height="100%" paddingTop={20} marginLeft={10}>
-          {loading ? "load" : renderCourses(courses)}
+              {/* Scroll Container */}
+              <HStack id="scroll-container">
+                {/* Semester List */}
+                <HStack id="semester-list">
+                  <Stack wrap="wrap" height="100%" paddingTop={20} marginLeft={10}>
+                  {loading ? "load" : renderCourses(courses)}
 
-          </Stack>
-        </HStack>
-      </HStack>
-    </Stack>
+                  </Stack>
+                </HStack>
+              </HStack>
+            </Stack>
           </HStack>
 
           {/* Elective Classes Display Section */}
