@@ -65,6 +65,7 @@ const SoftwareDev = () => {
       <CourseBox
       courseName={course.title}
       courseID={course.id}
+      courseCredit={course.credit}
       type="Core"
       sections={course.sections}
     />);

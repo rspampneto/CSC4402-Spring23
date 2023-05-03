@@ -30,8 +30,10 @@ const CourseBox = (props) => {
     return sections.map(section => 
       <Stack>
         <Box textAlign="center">
-          <Text>{section.sec_id}</Text>
-          <Text>{section.days}</Text>
+          <Text>Section {section.sec_id}</Text>
+          <Text>Days: {section.days}</Text>
+          <Text>Start time: {section.start_time}</Text>
+          <Text>End time: {section.end_time}</Text>
         </Box>
       </Stack>);
   }
@@ -50,11 +52,9 @@ const CourseBox = (props) => {
           <Stack>
             <HStack gap="70%">
               <Box>
-                <Text>S</Text>
+                
               </Box>
-              <Box>
-                <Text>M</Text>
-              </Box>
+              
             </HStack>
 
             <Box>
@@ -63,13 +63,13 @@ const CourseBox = (props) => {
 
             <HStack gap="20%">
               <Box>
-                <Text>P</Text>
+                
               </Box>
               <Box id="course-num-box">
                 <Text>{props.courseID}</Text>
               </Box>
               <Box>
-                <Text>H</Text>
+                <Text>{props.courseCredit}</Text>
               </Box>
             </HStack>
           </Stack>
