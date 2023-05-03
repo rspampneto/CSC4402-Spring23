@@ -19,11 +19,22 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
+import { Section } from "../../../interfaces/section";
 
 const CourseBox = (props) => {
   // Attributes
   // Functions
   const { isOpen, onOpen, onClose } = useDisclosure(); // Modal Logic
+
+  const renderSections = (sections: Section[]) => {
+    return sections.map(section => 
+      <Stack>
+        <Box textAlign="center">
+          <Text>{section.sec_id}</Text>
+          <Text>{section.days}</Text>
+        </Box>
+      </Stack>);
+  }
 
   // JSX
   return (
@@ -79,21 +90,7 @@ const CourseBox = (props) => {
           <ModalBody id="modal-content">
             {/* Section List */}
             <HStack id="section-list" gap={0} padding={4}>
-              <Stack>
-                <Box textAlign="center">
-                  <Text>Section 001</Text>
-                </Box>
-              </Stack>
-              <Stack>
-                <Box textAlign="center">
-                  <Text>Section 002</Text>
-                </Box>
-              </Stack>
-              <Stack>
-                <Box textAlign="center">
-                  <Text>Section 003</Text>
-                </Box>
-              </Stack>
+              {renderSections(props.sections)}
             </HStack>
           </ModalBody>
 

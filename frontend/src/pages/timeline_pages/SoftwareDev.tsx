@@ -66,6 +66,7 @@ const SoftwareDev = () => {
       courseName={course.title}
       courseID={course.id}
       type="Core"
+      sections={course.sections}
     />);
   }
 
