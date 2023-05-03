@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 import { environment } from "../../environment/environment";
 import axios from "axios";
 import { Section } from "../../interfaces/section";
+import CourseBox from "./t_components/CourseBox.tsx";
 
 const SoftwareDev = () => {
   // Attributes
@@ -59,6 +60,15 @@ const SoftwareDev = () => {
     getData();
   }, []);
 
+  const renderCourses = (courses: Course[]) => {
+    return courses.map(course => 
+      <CourseBox
+      courseName={course.title}
+      courseID={course.id}
+      type="Core"
+    />);
+  }
+
   // JSX
   return (
     <Box id="software">
@@ -91,17 +101,24 @@ const SoftwareDev = () => {
         <HStack className="main-display">
           {/* Core Classes Display Section */}
           <HStack className="core-display">
-            <Stack className="core-description">
-              <Text>
-                Ctlg. Year : {loading ? "load" : courses[0].sections[0].days}
-              </Text>
-              <Text> Total Courses : X</Text>
-              <Text> Total Hours : XXX</Text>
-              <Text> Semesters : 7</Text>
-            </Stack>
 
             {/* Component */}
-            <CoreContainer courses={courses[0]} />
+            <Stack id="core-container">
+      <Box id="core-title">
+        <Text>Core Concentrated Courses</Text>
+      </Box>
+
+      {/* Scroll Container */}
+      <HStack id="scroll-container">
+        {/* Semester List */}
+        <HStack id="semester-list">
+          <Stack wrap="wrap" height="100%" paddingTop={20} marginLeft={10}>
+          {loading ? "load" : renderCourses(courses)}
+
+          </Stack>
+        </HStack>
+      </HStack>
+    </Stack>
           </HStack>
 
           {/* Elective Classes Display Section */}
