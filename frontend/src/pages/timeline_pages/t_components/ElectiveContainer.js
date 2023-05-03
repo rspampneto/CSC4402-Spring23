@@ -1,6 +1,7 @@
 import React from "react";
 import { Box, Stack } from "@chakra-ui/react";
 import CourseBox from "./CourseBox.tsx";
+import ElectiveBox from "./ElectiveBox.tsx";
 import "./comp.css";
 
 const ElectiveContainer = () => {
@@ -13,7 +14,13 @@ const ElectiveContainer = () => {
       {/* Elective List */}
       <Stack id="elective-list">
         <Stack margin={5}>
-          <CourseBox
+          {/* <CourseBox
+            courseName="English"
+            courseID="1200"
+            type="General Education"
+          /> */}
+
+          <ElectiveBox
             courseName="English"
             courseID="1200"
             type="General Education"

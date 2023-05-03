@@ -68,9 +68,11 @@ const CourseBox = (props) => {
       <Modal isOpen={isOpen} onClose={onClose} id="modal">
         {/* <ModalOverlay /> */}
         <ModalContent color="whiteAlpha.100" height="100vh">
-          <ModalHeader>
+          <ModalHeader id="modal-header" color="white">
             <Box>
-              <Text>Sections</Text>
+              <Text as="h1" marginLeft="10px" marginTop="5px">
+                Sections
+              </Text>
             </Box>
           </ModalHeader>
           {/* <ModalCloseButton id="modal-close-btn" /> */}
@@ -97,7 +99,7 @@ const CourseBox = (props) => {
 
           <ModalFooter id="modal-footer">
             <Button id="modal-close-btn" onClick={onClose}>
-              <Text>Close</Text>
+              <Text as="h1">Close</Text>
             </Button>
           </ModalFooter>
         </ModalContent>
