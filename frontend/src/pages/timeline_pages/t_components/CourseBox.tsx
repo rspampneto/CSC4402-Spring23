@@ -49,7 +49,7 @@ const CourseBox = (props) => {
           </Box>
 
           {/* Course Layout */}
-          <Stack>
+          <Stack backgroundColor={props.con_id==0 ? "" : "blue"}>
             <HStack gap="70%">
               <Box>
                 

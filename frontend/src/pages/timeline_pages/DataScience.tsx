@@ -82,6 +82,7 @@ const DataScience = () => {
       courseName={course.title}
       courseID={course.id}
       courseCredit={course.credit}
+      con_id={course.con_id}
       type="Core"
       sections={course.sections}
     />);
@@ -164,7 +165,7 @@ const DataScience = () => {
                 </Stack>
               </Stack>
             </Stack>
-            
+
           </Stack>
         </HStack>
       </Box>

@@ -74,6 +74,7 @@ const SoftwareDev = () => {
       courseCredit={course.credit}
       type="Core"
       sections={course.sections}
+      con_id={course.con_id}
     />);
   }
 
