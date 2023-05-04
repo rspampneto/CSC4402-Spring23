@@ -53,9 +53,10 @@ const SoftwareDev = () => {
         // set course state
         setCourseList(coursesWSec);
 
-        const electiveResponse = await axios.get<CourseDB[]>(environment.baseApiUrl + "/course/5");
+        const electiveResponse = await axios.get<CourseDB[]>(
+          environment.baseApiUrl + "/course/5"
+        );
         setElectivesList(electiveResponse.data);
-
       } catch (error) {
         console.error(error);
         setError(error);
@@ -69,24 +70,26 @@ const SoftwareDev = () => {
   const renderCourses = (courses: Course[]) => {
     return courses.map((course) => (
       <CourseBox
-      courseName={course.title}
-      courseID={course.id}
-      courseCredit={course.credit}
-      type="Core"
-      sections={course.sections}
-      con_id={course.con_id}
-    />);
-  }
+        courseName={course.title}
+        courseID={course.id}
+        courseCredit={course.credit}
+        type="Core"
+        sections={course.sections}
+        con_id={course.con_id}
+      />
+    ));
+  };
 
   const renderElectives = (electives: CourseDB[]) => {
-    return electives.map(elective =>
+    return electives.map((elective) => (
       <ElectiveBox
-      courseName={elective.title}
-      courseID={elective.id}
-      credit={elective.credit}
-      type="Electives"
-    />)
-  }
+        courseName={elective.title}
+        courseID={elective.id}
+        credit={elective.credit}
+        type="Electives"
+      />
+    ));
+  };
 
   // JSX
   return (
@@ -155,11 +158,10 @@ const SoftwareDev = () => {
               {/* Elective List */}
               <Stack id="elective-list">
                 <Stack margin={5}>
-                {loading ? "load" : renderElectives(electives)}
+                  {loading ? "load" : renderElectives(electives)}
                 </Stack>
               </Stack>
             </Stack>
-
           </Stack>
         </HStack>
       </Box>
