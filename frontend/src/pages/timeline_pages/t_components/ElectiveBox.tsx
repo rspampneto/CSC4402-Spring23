@@ -38,10 +38,10 @@ const ElectiveBox = (props) => {
           <Stack>
             <HStack gap="89.9%">
               <Box>
-                <Text>S</Text>
+                
               </Box>
               <Box>
-                <Text>M</Text>
+               
               </Box>
             </HStack>
 
@@ -51,13 +51,13 @@ const ElectiveBox = (props) => {
 
             <HStack gap="39%">
               <Box>
-                <Text>P</Text>
+                
               </Box>
               <Box id="elective-num-box">
                 <Text>{props.courseID}</Text>
               </Box>
               <Box>
-                <Text>H</Text>
+                {<Text>{props.credit}</Text>}
               </Box>
             </HStack>
           </Stack>
