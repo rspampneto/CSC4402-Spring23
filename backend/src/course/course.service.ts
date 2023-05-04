@@ -10,8 +10,15 @@ export class CourseService {
   }
 
   async getConcentrationCourses(concentration_id: number) {
-    return await this.db.query_DB(
-      `select * from course where con_id = 0 or con_id = ${concentration_id}`,
-    );
+    if(concentration_id != 5){
+      return await this.db.query_DB(
+        `select * from course where con_id = 0 or con_id = ${concentration_id}`,
+      );
+    }
+    else {
+      return await this.db.query_DB(
+        `select * from course where con_id = ${concentration_id}`,
+      );
+    }
   }
 }
