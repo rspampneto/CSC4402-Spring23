@@ -1,4 +1,4 @@
-import react from "react";
+import react, { useState } from "react";
 import { Box, HStack, Heading, Text, Stack, Button } from "@chakra-ui/react";
 import bg_img from "../../assets/photos/greenblack.jpg";
 import ElectiveContainer from "./t_components/ElectiveContainer";
@@ -24,11 +24,13 @@ import {
   ModalCloseButton,
 } from "@chakra-ui/react";
 import CourseBox from "./t_components/CourseBox.tsx";
+import ElectiveBox from "./t_components/ElectiveBox.tsx";
 
 const CyberSecurity = () => {
   // Attributes
   // Functions
   const [courses, setCourseList] = React.useState<Course[]>([]);
+  const [electives, setElectivesList] = useState<CourseDB[]>([]);
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
   const baseUrl = environment.baseApiUrl + "/course/2";
@@ -61,6 +63,10 @@ const CyberSecurity = () => {
         console.log(coursesWSec);
         // set course state
         setCourseList(coursesWSec);
+
+        const electiveResponse = await axios.get<CourseDB[]>(environment.baseApiUrl + "/course/5");
+        setElectivesList(electiveResponse.data);
+
       } catch (error) {
         console.error(error);
         setError(error);
@@ -79,6 +85,16 @@ const CyberSecurity = () => {
       type="Core"
       sections={course.sections}
     />);
+  }
+
+  const renderElectives = (electives: CourseDB[]) => {
+    return electives.map(elective =>
+      <ElectiveBox
+      courseName={elective.title}
+      courseID={elective.id}
+      credit={elective.credit}
+      type="Electives"
+    />)
   }
 
   // JSX
@@ -136,11 +152,19 @@ const CyberSecurity = () => {
           {/* Elective Classes Display Section */}
           <Stack className="elective-display">
             <Box id="elective-title">
-              <Text>Electives & General Education</Text>
+              <Text>Electives</Text>
             </Box>
 
             {/* Component */}
-            <ElectiveContainer />
+            <Stack id="elective-container">
+              {/* Elective List */}
+              <Stack id="elective-list">
+                <Stack margin={5}>
+                {loading ? "load" : renderElectives(electives)}
+                </Stack>
+              </Stack>
+            </Stack>
+
           </Stack>
         </HStack>
       </Box>

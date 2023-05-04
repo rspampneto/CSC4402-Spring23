@@ -13,11 +13,13 @@ import { environment } from "../../environment/environment";
 import axios from "axios";
 import { Section } from "../../interfaces/section";
 import CourseBox from "./t_components/CourseBox.tsx";
+import ElectiveBox from "./t_components/ElectiveBox.tsx";
 
 const SoftwareDev = () => {
   // Attributes
   // Functions
   const [courses, setCourseList] = useState<Course[]>([]);
+  const [electives, setElectivesList] = useState<CourseDB[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const baseUrl = environment.baseApiUrl + "/course/1";
@@ -50,6 +52,10 @@ const SoftwareDev = () => {
         console.log(coursesWSec);
         // set course state
         setCourseList(coursesWSec);
+
+        const electiveResponse = await axios.get<CourseDB[]>(environment.baseApiUrl + "/course/5");
+        setElectivesList(electiveResponse.data);
+
       } catch (error) {
         console.error(error);
         setError(error);
@@ -69,6 +75,16 @@ const SoftwareDev = () => {
       type="Core"
       sections={course.sections}
     />);
+  }
+
+  const renderElectives = (electives: CourseDB[]) => {
+    return electives.map(elective =>
+      <ElectiveBox
+      courseName={elective.title}
+      courseID={elective.id}
+      credit={elective.credit}
+      type="Electives"
+    />)
   }
 
   // JSX
@@ -126,11 +142,19 @@ const SoftwareDev = () => {
           {/* Elective Classes Display Section */}
           <Stack className="elective-display">
             <Box id="elective-title">
-              <Text>Electives & General Education</Text>
+              <Text>Electives</Text>
             </Box>
 
             {/* Component */}
-            <ElectiveContainer />
+            <Stack id="elective-container">
+              {/* Elective List */}
+              <Stack id="elective-list">
+                <Stack margin={5}>
+                {loading ? "load" : renderElectives(electives)}
+                </Stack>
+              </Stack>
+            </Stack>
+
           </Stack>
         </HStack>
       </Box>
