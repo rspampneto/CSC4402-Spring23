@@ -111,7 +111,7 @@ const CyberSecurity = () => {
         {/* Software Title */}
         <HStack className="timeline_title_box">
           <Text as="h1" className="timeline_title">
-            Software Development
+            Cybersecurity
           </Text>
           <Box id="timeline_decorationA"></Box>
         </HStack>
