@@ -11,7 +11,7 @@ export class DatabaseService {
     try {
       // create connection using .env values
       this.connection = await createConnection(process.env.DB_URL);
-      this.connection.connect();
+      // this.connection.connect();
     } catch (e) {
       console.log('Error connecting to local mySQL server. ' + e);
       return;

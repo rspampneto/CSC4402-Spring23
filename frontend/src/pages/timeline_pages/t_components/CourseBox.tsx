@@ -27,7 +27,7 @@ const CourseBox = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure(); // Modal Logic
 
   const renderSections = (sections: Section[]) => {
-    return sections.map(section => 
+    return sections.map((section) => (
       <Stack>
         <Box textAlign="center">
           <Text>Section {section.sec_id}</Text>
@@ -35,13 +35,14 @@ const CourseBox = (props) => {
           <Text>Start time: {section.start_time}</Text>
           <Text>End time: {section.end_time}</Text>
         </Box>
-      </Stack>);
-  }
+      </Stack>
+    ));
+  };
 
   // JSX
   return (
     <>
-      <Button onClick={onOpen} color="white" id="course-button">
+      <Button onClick={onOpen} color="white" id="course-button" width="200px">
         <Stack id="course">
           {/* Core Label */}
           <Box className="core-label">
@@ -49,22 +50,17 @@ const CourseBox = (props) => {
           </Box>
 
           {/* Course Layout */}
-          <Stack backgroundColor={props.con_id==0 ? "" : "blue"}>
+          <Stack backgroundColor={props.con_id == 0 ? "" : "blue"}>
             <HStack gap="70%">
-              <Box>
-                
-              </Box>
-              
+              <Box></Box>
             </HStack>
 
             <Box>
               <Text>{props.courseName}</Text>
             </Box>
 
-            <HStack gap="20%">
-              <Box>
-                
-              </Box>
+            <HStack gap="32%">
+              <Box></Box>
               <Box id="course-num-box">
                 <Text>{props.courseID}</Text>
               </Box>

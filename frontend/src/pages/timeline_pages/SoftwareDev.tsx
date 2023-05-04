@@ -67,7 +67,7 @@ const SoftwareDev = () => {
   }, []);
 
   const renderCourses = (courses: Course[]) => {
-    return courses.map(course => 
+    return courses.map((course) => (
       <CourseBox
       courseName={course.title}
       courseID={course.id}
@@ -117,31 +117,35 @@ const SoftwareDev = () => {
         </Link>
 
         {/* Main Display Section */}
-        <HStack className="main-display">
-          
+        <HStack className="main-display" left="0px">
           {/* Core Classes Display Section */}
-          <HStack className="core-display">
-            {/* Component */}
-            <Stack id="core-container">
-              <Box id="core-title">
-                <Text>Core Concentrated Courses</Text>
-              </Box>
+          {/* Component */}
+          <Stack id="core-container" height="400px">
+            <Box id="core-title">
+              <Text>Core Concentrated Courses</Text>
+            </Box>
 
-              {/* Scroll Container */}
-              <HStack id="scroll-container">
-                {/* Semester List */}
-                <HStack id="semester-list">
-                  <Stack wrap="wrap" height="100%" paddingTop={20} marginLeft={10}>
+            {/* Scroll Container */}
+            <HStack id="scroll-container">
+              {/* Semester List */}
+              <HStack id="semester-list" gap={0}>
+                <Stack
+                  wrap="wrap"
+                  height="98%"
+                  padding={10}
+                  marginLeft={10}
+                  width="100%"
+                  spacing={3}
+                  // border="1px solid red"
+                >
                   {loading ? "load" : renderCourses(courses)}
-
-                  </Stack>
-                </HStack>
+                </Stack>
               </HStack>
-            </Stack>
-          </HStack>
+            </HStack>
+          </Stack>
 
           {/* Elective Classes Display Section */}
-          <Stack className="elective-display">
+          <Stack className="elective-display" left="67%">
             <Box id="elective-title">
               <Text>Electives</Text>
             </Box>
@@ -164,6 +168,3 @@ const SoftwareDev = () => {
 };
 
 export default SoftwareDev;
-function useDisclosure(): { isOpen: any; onOpen: any; onClose: any } {
-  throw new Error("Function not implemented.");
-}
