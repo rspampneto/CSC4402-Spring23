@@ -23,6 +23,7 @@ import {
   ModalBody,
   ModalCloseButton,
 } from "@chakra-ui/react";
+import CourseBox from "./t_components/CourseBox.tsx";
 
 const DataScience = () => {
   // Attributes
@@ -69,22 +70,33 @@ const DataScience = () => {
     };
     getData();
   }, []);
+  const renderCourses = (courses: Course[]) => {
+    return courses.map(course => 
+      <CourseBox
+      courseName={course.title}
+      courseID={course.id}
+      courseCredit={course.credit}
+      type="Core"
+      sections={course.sections}
+    />);
+  }
+
   // JSX
   return (
-    <Box id="data">
+    <Box id="software">
       {/* Landing Background */}
       <Box className="page_bg">
         <img src={bg_img}></img>
       </Box>
 
-      {/* Software Contnet */}
+      {/* Software Content */}
       <Box className="content timeline_page">
         {/* Software Title */}
         <HStack className="timeline_title_box">
           <Text as="h1" className="timeline_title">
-            Data Science
+            Software Development
           </Text>
-          <Box id="timeline_decorationB"></Box>
+          <Box id="timeline_decorationA"></Box>
         </HStack>
 
         {/* Back Button */}
@@ -99,28 +111,37 @@ const DataScience = () => {
 
         {/* Main Display Section */}
         <HStack className="main-display">
+          
           {/* Core Classes Display Section */}
           <HStack className="core-display">
-            <Stack className="core-description">
-              <Text>Ctlg. Year : XXXX</Text>
-              <Text> Total Courses : X</Text>
-              <Text> Total Hours : XXX</Text>
-              <Text> Semesters : 7</Text>
-            </Stack>
-
             {/* Component */}
-            <CoreContainer />
+            <Stack id="core-container">
+              <Box id="core-title">
+                <Text>Core Concentrated Courses</Text>
+              </Box>
+
+              {/* Scroll Container */}
+              <HStack id="scroll-container">
+                {/* Semester List */}
+                <HStack id="semester-list">
+                  <Stack wrap="wrap" height="100%" paddingTop={20} marginLeft={10}>
+                  {loading ? "load" : renderCourses(courses)}
+
+                  </Stack>
+                </HStack>
+              </HStack>
+            </Stack>
           </HStack>
 
           {/* Elective Classes Display Section */}
-          <Box className="elective-display">
+          <Stack className="elective-display">
             <Box id="elective-title">
               <Text>Electives & General Education</Text>
             </Box>
 
             {/* Component */}
             <ElectiveContainer />
-          </Box>
+          </Stack>
         </HStack>
       </Box>
     </Box>
