@@ -120,7 +120,7 @@ const SoftwareDev = () => {
         </Link>
 
         {/* Main Display Section */}
-        <HStack className="main-display" left="0px">
+        <HStack className="main-display">
           {/* Core Classes Display Section */}
           {/* Component */}
           <Stack id="core-container" height="400px">
