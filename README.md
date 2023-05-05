@@ -20,7 +20,7 @@ Taylor Scott - Backend
 
 Ravi Stimphil - Backend
 
-Aaron Warren - Frontend & Backend  
+Aaron Warren - Backend  
 
 Harrison Bourg - Backend  
 
